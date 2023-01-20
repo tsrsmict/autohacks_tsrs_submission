@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 export default function HomePage()  {
     return (
       <View style={styles.container}>
-        {/* Header */}
+        {/* Header Section*/}
         <View style={styles.header}>
             <Text style={styles.heading}>Home</Text>
             <View style={styles.circleContainer}>
