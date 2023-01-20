@@ -17,5 +17,5 @@ def submit_form():
     # Return a response to the frontend
     return jsonify({'status': 'success'})
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     app.run(port=5000)
