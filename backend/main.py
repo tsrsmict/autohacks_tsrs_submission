@@ -1,11 +1,21 @@
-from flask import Flask, render_template_string
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET", "POST"])
-def hello_world():
-    return "<P>Hello, World!</p>"
+@app.route('/submitform', methods=['POST'])
+def submit_form():
+    # Get the form data from the request
+    data = request.get_json()
 
+    # Extract the form fields from the data
+    name = data['name']
+    email = data['email']
 
-if __name__ == "__main__":
-    app.run(debug=True, port=1111)
+    # Do something with the form data, like saving it to a database
+    # ...
+
+    # Return a response to the frontend
+    return jsonify({'status': 'success'})
+
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)
