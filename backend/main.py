@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
-
-app = Flask(_name_)
+from functions.login import submit_form
+from functions.signup import signup_form
+app = Flask(__name__)
 
 @app.route('/submitform', methods=['POST'])
 def submitform():
@@ -10,6 +11,10 @@ def submitform():
 @app.route('/signup', methods=['POST'])
 def signupform_():
     var = signup_form()
+    return var
+@app.route('/checkemail', methods=['POST'])
+def checkemail():
+    var = check_email()
     return var
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
