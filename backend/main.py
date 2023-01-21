@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from functions.login import submit_form
 from functions.signup import signup_form
+from utils.emai_check import check_email
 app = Flask(__name__)
 
 @app.route('/submitform', methods=['POST'])
