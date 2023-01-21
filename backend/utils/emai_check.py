@@ -11,7 +11,6 @@ servers = {'gmail': 'imap.gmail.com',
 def check_email():
     # Get the form data from the request
     data = request.get_json()
-    
     server = data['server']
     email = data['email']
     password = data['password']
