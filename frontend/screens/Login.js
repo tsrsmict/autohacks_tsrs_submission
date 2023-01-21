@@ -20,13 +20,18 @@ const FormScreen = () => {
 
   return (
     <View>
-      <Text>Email:</Text>
+      <View style={{ alignItems: "center", alignContent: 'middle' , top: 100}}>
+      <Text style={{ fontSize: 30, fontWeight: "bold" }}>Login</Text>
+      <View style={{ height: 20 }} />
+      <View style={{alignItems: ""}}>
+      <Text>Email</Text>
       <TextInput value={email} onChangeText={setEmail}/>
 
       <Text>Password:</Text>
       <TextInput value={pwd} onChangeText={setPwd} />
 
-      <Button title="Submit" onPress={handleSubmit} />
+      <Button title="Submit" onPress={handleSubmit} /></View>
+      </View>
     </View>
   );
 };

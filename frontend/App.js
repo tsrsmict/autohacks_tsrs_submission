@@ -7,7 +7,7 @@ export default function App() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-      <SignUp />
+      <FormScreen/>
       <StatusBar style="auto" />
     </View>
     </SafeAreaView>
@@ -16,7 +16,5 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    top: 400,
-    backgroundColor: '#fff',
   },
 });
