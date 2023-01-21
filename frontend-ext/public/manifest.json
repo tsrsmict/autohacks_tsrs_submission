@@ -1,0 +1,10 @@
+{
+  "name": "My First Extension",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "description": "The first extension that I made.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["active-tab"]
+}
