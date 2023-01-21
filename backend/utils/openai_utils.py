@@ -59,10 +59,16 @@ def gen_questions(email:str):
     questions.append({'question':'What should be the tone of this email?','options':['Happy', 'Sad', 'Angry', 'Neutral','Casual','Formal','Business','Other']})
     return questions
 
-def gen_response(email:str,question:str,option:str):
+def gen_response(email:str,questions:list):
+    doc = email+ "\n"+"The receiver of this email above was asked questions about the what their response would be to the email, the questions and the answers were as follows:\n"
+    for question in questions:
+        doc += "Questions: "+question['question'] + "\t"
+        doc += "Answer:" + question['answer'] + "\n"
+    doc += "Generate a response to this email based on the above parameters."   
+    print(doc) 
     response = openai.Completion.create(
     model="text-davinci-003",
-    prompt= email+ "\nGenerate a sample response to this email based on the  parameters.",
+    prompt= doc,
     temperature=0.6,
     max_tokens=500,
     top_p=1,
