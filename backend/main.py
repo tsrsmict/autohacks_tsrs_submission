@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
-from login import submit_form
-from signup import signup_form
+from functions.login import submit_form
+from functions.signup import signup_form
 app = Flask(__name__)
 
 @app.route('/submitform', methods=['POST'])
