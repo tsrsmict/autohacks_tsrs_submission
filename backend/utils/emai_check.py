@@ -15,9 +15,9 @@ def check_email():
     server = data['server']
     email = data['email']
     password = data['password']
-    imap = imaplib.IMAP4_SSL(servers[server])
+    imap = imaplib.IMAP4_SSL('imap.gmail.com')
     try :
         imap.login(email, password)
         return jsonify({'status': 'success'})
     except:
-        return jsonify(data)
+        return jsonify({'status': 'error'})
