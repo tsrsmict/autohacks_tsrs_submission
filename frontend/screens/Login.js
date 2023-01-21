@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, SafeAreaView} from 'react-native';
+import { View, StyleSheet, Text, TextInput, Button, SafeAreaView} from 'react-native';
 import axios from 'axios';
 
 const FormScreen = () => {
@@ -41,3 +41,29 @@ const FormScreen = () => {
 };
 
 export default FormScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    margin: 20,
+  },
+  header: {
+      flexDirection: 'row',
+      justifyContent: 'space-between'
+  },
+  heading: {
+      fontSize: 35,
+      fontWeight: "bold",
+  },
+  circleContainer: {
+     justifyContent: 'center'
+  },
+  circle: {
+      height: 50,
+      width: 50,
+      borderRadius: 25,
+      backgroundColor: '#000', 
+      margin: 'auto',
+  }
+});
