@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TextInput, Button } from "react-native";
 import axios from "axios";
 
-const FormScreen = () => {
+const AddEmail = () => {
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
   const [server, setServer] = useState("");
@@ -26,7 +26,7 @@ const FormScreen = () => {
       <Text style={{ fontSize: 30, fontWeight: "bold" }}>Login</Text>
       <View style={{ height: 20 }} />
       <View style={{alignItems: ""}}>
-     ndroid    <Text>Server</Text>
+      <Text>Server</Text>
         <TextInput value={server} onChangeText={setServer}/>
       <Text>Email</Text>
       <TextInput value={email} onChangeText={setEmail}/>
@@ -40,4 +40,4 @@ const FormScreen = () => {
   );
 };
 
-export default FormScreen;
+export default AddEmail;
