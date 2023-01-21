@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, SafeAreaView } from 'react-native';
+import { View, Text, TextInput, Button, SafeAreaView} from 'react-native';
 import axios from 'axios';
 
 const FormScreen = () => {
@@ -26,14 +26,14 @@ const FormScreen = () => {
         </View>
         <View style={styles.formWrap}>
         <View style={styles.formContainer}>
-          <Text>Name:</Text>
-          <TextInput style={styles.textInput} value={name} onChangeText={setName} />
+          <Text>Email:</Text>
+          <TextInput style={styles.textInput} value={email} onChangeText={setEmail} />
         </View>
 
-      <Text>Email:</Text>
-      <TextInput value={email} onChangeText={setEmail} />
+      <Text>Password:</Text>
+      <TextInput value={pwd} onChangeText={setPwd}/>
 
-      <Button title="Submit" onPress={handleSubmit} /></View>
+      <Button title="Submit" onPress={handleSubmit}/></View>
       </View>
 
     </SafeAreaView>
