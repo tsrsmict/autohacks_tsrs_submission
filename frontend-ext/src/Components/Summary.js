@@ -13,7 +13,7 @@ function Summary() {
                         this is my very loong text</p>
                     </div>
                     <div>
-                    <button className=" mt-10 bg-black hover:bg-white border border-2 border-black hover:text-black text-white font-bold py-2 px-4 rounded">Navigate To An Email To Start Writing</button>
+                    <a href="/email"><button className=" mt-10 bg-black hover:bg-white border border-2 border-black hover:text-black text-white font-bold py-2 px-4 rounded">Summarize Another Email</button></a>
                     </div>
                 </div>
             </div>
