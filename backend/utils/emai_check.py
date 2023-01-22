@@ -82,12 +82,12 @@ def check_email():
                 line = line.rstrip()
                 line.replace("\r", "")
             i['email-body'] = body
-            print(body)
+            
         except:
             i['email-body'] = ""
 
         x = i["from"].split(" <")
-        print(x)
+    
         i['from'] = x[0]
         try: 
             i['from-email'] = x[1]
@@ -95,9 +95,6 @@ def check_email():
         except:
             emaildata.remove(i)
 
-        print(y)
-        print(i)
         y += 1
-        print(emaildata)
+    return emaildata
 
-check_email()

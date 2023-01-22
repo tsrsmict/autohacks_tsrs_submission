@@ -1,7 +1,8 @@
 import openai
-
-import config as cfg
-openai.api_key = cfg.OPEN_AI_KEY
+from dotenv import load_dotenv
+import os
+load_dotenv()
+openai.api_key = os.getenv("OPEN_AI_KEY")
 
 def gen_questions(email:str):
 # Is this a yes or a no mail?
@@ -31,6 +32,8 @@ def gen_questions(email:str):
         presence_penalty=0
         )
         questions.append({'question':yes_no_question.choices[0].text.strip(),'options':['Yes','No']})
+    else: 
+        questions.append({'question':'Is this a yes or a no email?','options':["Yes",  "No"]})
 
 
 # What should be the tone of this email
@@ -65,7 +68,6 @@ def gen_response(email:str,questions:list):
         doc += "Questions: "+question['question'] + "\t"
         doc += "Answer:" + question['answer'] + "\n"
     doc += "Generate a response to this email based on the above parameters."   
-    print(doc) 
     response = openai.Completion.create(
     model="text-davinci-003",
     prompt= doc,
