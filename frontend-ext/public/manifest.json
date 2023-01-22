@@ -1,10 +1,10 @@
 {
-  "name": "My First Extension",
+  "name": "GPTThing",
   "version": "1.0.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
   "description": "The first extension that I made.",
-  "action": {
+  "browser_action": {
     "default_popup": "index.html"
   },
-  "permissions": ["active-tab"]
+  "permissions": []
 }
