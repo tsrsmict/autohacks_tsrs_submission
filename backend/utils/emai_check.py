@@ -99,5 +99,4 @@ def check_email():
         print(i)
         y += 1
         print(emaildata)
-
-check_email()
+        return emaildata
