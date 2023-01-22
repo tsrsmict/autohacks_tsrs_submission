@@ -11,11 +11,7 @@ function App() {
     <div>
       <HashRouter>
         <Routes>
-<<<<<<< HEAD
-          <Route path="/" element={<Summary />} />
-=======
           <Route path="/" element={<Question />} />
->>>>>>> 7537be3967556da00369b32eae349ff2de96354c
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/question" element={<Question />} />
