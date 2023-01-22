@@ -96,5 +96,10 @@ def check_email():
             emaildata.remove(i)
 
         y += 1
+<<<<<<< HEAD
     return emaildata
 
+=======
+        print(emaildata)
+        return emaildata
+>>>>>>> 7ffec388aaf1afea74293e8343e49f21660e6720
