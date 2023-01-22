@@ -26,6 +26,12 @@ for i in emaildata:
 def checkemail():
     return {"message":gen_summary(emails)}
 
-
+@app.route('/questions', methods=['GET'])
+def questions():
+    message = []
+    for i in emails:
+        quest = {'questions   ': gen_questions(i)}
+    message.append(quest)
+    return {"message":message}
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
