@@ -1,20 +1,27 @@
 import React from 'react'
 import axios from 'axios'
-
-async function Summary() {
+async function getdata() {
     try {
         const res = await axios.get("http://localhost:5000/summary");
-        console.log(res);
-      } catch (err) {
-    console.log(err)}
+        console.log(res.data)
+        return res.data
+    } catch (err) {
+        console.log(err);
+    }
+}
+const data = getdata()
+function Summary() {
+    const [summary] = React.useState(data)
     return (
-        <div className=" flex h-screen justify-center items-center">
+        <div className=" flex h-screen justify-center items-center p-5">
             <div className='m-20'>
-                <h1 className='font-bold text-2xl'>Here is a summary of your email</h1>
+                <h1 className='font-bold text-2xl'>Here is a summary of your emails of yesterday</h1>
                 <div className="mt-5 justify-center items-center">
                     <div>
                     <p>
-                     this is some random not required text</p>
+                    Good morning John, 
+It's time to get your day started! Don't forget to RSVP by May 31st for the company picnic in Dubai on Saturday, June 12th. You're also invited to a party next weekend at [location], make sure you let Stacy know if you're coming. I'm sure Smith would appreciate your help in resolving the issues with the order they placed with your company (order number 09290822121). Rick is also hoping to catch up with you over coffee sometime next week. Last but not least, welcome Arjun who will be joining our team as a Senior JavaScript Developer on Monday. Have a great day!
+                  </p>
                     </div>
                     <div>
                     <a href="/email"><button className=" mt-10 bg-black hover:bg-white border border-2 border-black hover:text-black text-white font-bold py-2 px-4 rounded">Summarize Another Email</button></a>
