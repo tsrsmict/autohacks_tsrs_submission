@@ -76,3 +76,16 @@ def gen_response(email:str,questions:list):
     presence_penalty=0
     )
     return response.choices[0].text.strip()
+
+def gen_summary(email:list):
+    emails = "\n\n".join(email)
+    summary = openai.Completion.create(
+    model="text-davinci-003",
+    prompt= email+ "\nGenerate a 100 word brief of the following emails",
+    temperature=0.6,
+    max_tokens=500,
+    top_p=1,
+    frequency_penalty=0.5,
+    presence_penalty=0
+    )
+    return summary.choices[0].text.strip()
