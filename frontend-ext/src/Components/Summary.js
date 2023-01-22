@@ -1,8 +1,12 @@
 import React from 'react'
 import axios from 'axios'
-function Summary() {
-    const summary = axios.get('http://localhost:5000/summary')
-    console.log(summary)
+
+async function Summary() {
+    try {
+        const res = await axios.get("http://localhost:5000/summary");
+        console.log(res);
+      } catch (err) {
+    console.log(err)}
     return (
         <div className=" flex h-screen justify-center items-center">
             <div className='m-20'>
@@ -10,7 +14,7 @@ function Summary() {
                 <div className="mt-5 justify-center items-center">
                     <div>
                     <p>
-                        this is my very loong text</p>
+                     this is some random not required text</p>
                     </div>
                     <div>
                     <button className=" mt-10 bg-black hover:bg-white border border-2 border-black hover:text-black text-white font-bold py-2 px-4 rounded">Navigate To An Email To Start Writing</button>
