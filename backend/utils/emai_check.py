@@ -5,8 +5,8 @@ import webbrowser
 import os
 
 
-username = "aggarwalaarushprogrammer@gmail.com"
-password = "tfahygbfyclwffdm"
+username = "iamanerdynerdn@gmail.com"
+password = "absxssnbhtgjeqxz"
 
 imap_server = "imap.gmail.com"
 
@@ -18,8 +18,7 @@ def check_email():
     imap.login(username, password)  
     status, messages = imap.select("INBOX")
     # number of top emails to fetch
-    N = 10
-    # total number of emails
+    N = 5    # total number of emails
     messages = int(messages[0])
 
     for i in range(messages, messages-N, -1):
@@ -79,10 +78,14 @@ def check_email():
     for i in emaildata:
         try:
             body = i['email-body']
-            body.replace('\r', " ")
+            for line in body:
+                line = line.rstrip()
+                line.replace("\r", "")
+            i['email-body'] = body
+            print(body)
         except:
             i['email-body'] = ""
-        print(i)
+
         x = i["from"].split(" <")
         print(x)
         i['from'] = x[0]
@@ -93,7 +96,8 @@ def check_email():
             emaildata.remove(i)
 
         print(y)
+        print(i)
         y += 1
-
+        print(emaildata)
 
 check_email()
