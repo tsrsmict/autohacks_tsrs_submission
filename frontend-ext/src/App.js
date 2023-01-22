@@ -5,6 +5,7 @@ import Signup from './Components/Signup';
 import { BrowserRouter, Route, Link, Routes } from "react-router-dom"
 import Question from './Components/Question';
 import Summary from './Components/Summary';
+import EmailInput from './Components/EmailInput';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
          <Route path='/signup' element={<Signup />} />
          <Route path='/question' element={<Question />} />
          <Route path='/summary' element={<Summary />} />
+         <Route path='/email' element={<EmailInput />}></Route>
         </Routes>
       </BrowserRouter>
       </div>
